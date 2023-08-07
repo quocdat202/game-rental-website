@@ -45,7 +45,7 @@ const About = () => {
                         errorLevel="H"
                         size={size}
                         iconSize={size / 4}
-                        value="https://free-game.vercel.app/"
+                        value="https://game-rental-website.vercel.app/"
                     // icon="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
                     />
                 </Col>
