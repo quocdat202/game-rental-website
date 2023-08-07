@@ -6,9 +6,24 @@
 .played-the-most {
     padding-right: 65%;
 }
+.game-played-the-most{
+    margin-top: 50px;
+}
+
+.game-played-the-most h1{
+    padding-bottom: 20px;
+}
+
+.slide-img img{
+    
+}
 
 .Update {
     padding-top: 50px;
+}
+
+.Update h1{
+    padding-bottom: 20px;
 }
 
 .Images {
@@ -21,10 +36,9 @@
 }
 
 .footer {
-    min-width: 97.3%;
-    padding: 20px 20px;
-    width: 450px;
-    height: 100px;
+    margin-top: 30px;
+    padding: 20px 0 0 0;
+    width: 100%;
     background-image: url(../Images/footer.jpg);
     position: absolute;
     z-index: 10000;

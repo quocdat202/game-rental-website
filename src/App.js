@@ -108,7 +108,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        
+
         {contextHolder}
 
         {contextHolderNotification}
@@ -122,13 +122,13 @@ function App() {
 
         <Route path='/register' exact component={() => <Register notificationLogin={notificationLogin} />}></Route>
 
-        <Route path='/information-user' exact component={() => <User user={user}  notificationLogin={notificationLogin} />}></Route>
+        <Route path='/information-user' exact component={() => <User user={user} notificationLogin={notificationLogin} />}></Route>
 
         <Route path='/about' exact component={() => <About notificationLogin={notificationLogin} />}></Route>
 
-        <Route path='/game/:id' exact component={(match) =>  <Detail match={match} addToCart={addToCart}/>}  ></Route>
+        <Route path='/game/:id' exact component={(match) => <Detail match={match} addToCart={addToCart} />}  ></Route>
 
-        <Route path='/checkpoint' exact component={() =>  <Checkpoint2 />}></Route>
+        <Route path='/checkpoint' exact component={() => <Checkpoint2 />}></Route>
 
         <Route path='/library' exact component={() => <Library user={user} />}></Route>
 

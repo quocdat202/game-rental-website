@@ -34,73 +34,72 @@ const Login = ({ notificationLogin }) => {
     };
 
     return (
-        <div style={{ width: '300px', paddingLeft: '34%', paddingTop: '50px' }}>
-            <div>
-            <Form name="basic"
-                labelCol={{
-                    span: 8,
-                }}
-                wrapperCol={{
-                    span: 16,
-                }}
-                style={{
-                    maxWidth: 'none',
-                    width: 500,
-                    height: '600px'
-                }}
-                initialValues={{
-                    remember: true,
-                }}
-                onFinish={handleLogin}
-                autoComplete="off"
-                className='form-login'
-            >
-                <div style={{paddingLeft: '16%', width: '100%', paddingTop: '80px'}}>
-                    <Form.Item
-                        name="email"
-                        rules={[
-                            {
-                                required: true,
-                                message: 'Please input your Email',
-                            },
-                        ]}
-                    >
-                        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Email" />
-                    </Form.Item>
-                    
-                    <Form.Item
-                        name="password"
-                        rules={[
-                            {
-                                required: true,
-                                message: 'Please input your Password!',
-                            },
-                        ]}
-                    >
-                        <Input
-                            prefix={<LockOutlined className="site-form-item-icon" />}
-                            type="password"
-                            placeholder="Password"
-                        />
-                    </Form.Item>
-                </div>
+        <div style={{ paddingTop: '50px' }}>
+            <div style={{ width: '50%' }}>
+                <Form name="basic"
+                    labelCol={{
+                        span: 8,
+                    }}
+                    wrapperCol={{
+                        span: 16,
+                    }}
+                    style={{
+                        maxWidth: 'none',
+                        height: '600px'
+                    }}
+                    initialValues={{
+                        remember: true,
+                    }}
+                    onFinish={handleLogin}
+                    autoComplete="off"
+                    className='form-login'
+                >
+                    <div style={{ width: '100%', paddingTop: '80px' }}>
+                        <Form.Item
+                            name="email"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Please input your Email',
+                                },
+                            ]}
+                        >
+                            <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Email" />
+                        </Form.Item>
 
-                
-                <Form.Item wrapperCol={{ offset: 0.5 }}>
-                    <Button
-                        style={{ margin: '10px', marginRight: 10 }}
-                        onClick={handleGoogleLogin}>
-                        <icon style={{ padding: '5px' }}><GoogleOutlined /></icon>
-                        Google
-                    </Button>
-                </Form.Item>
+                        <Form.Item
+                            name="password"
+                            rules={[
+                                {
+                                    required: true,
+                                    message: 'Please input your Password!',
+                                },
+                            ]}
+                        >
+                            <Input
+                                prefix={<LockOutlined className="site-form-item-icon" />}
+                                type="password"
+                                placeholder="Password"
+                            />
+                        </Form.Item>
+                    </div>
 
-                <Form.Item wrapperCol={{ offset: 0.5 }} style={{paddingBottom: '20px'}}>
-                    <Button type="primary" htmlType="submit" className="login-form-button">
-                        Login
-                    </Button>
-                </Form.Item>
-            </Form>
+
+                    <Form.Item wrapperCol={{ offset: 0.5 }}>
+                        <Button
+                            style={{ margin: '10px', marginRight: 10 }}
+                            onClick={handleGoogleLogin}>
+                            <icon style={{ padding: '5px' }}><GoogleOutlined /></icon>
+                            Google
+                        </Button>
+                    </Form.Item>
+
+                    <Form.Item wrapperCol={{ offset: 0.5 }} style={{ paddingBottom: '20px' }}>
+                        <Button type="primary" htmlType="submit" className="login-form-button">
+                            Login
+                        </Button>
+                    </Form.Item>
+                </Form>
             </div>
         </div>
     );

@@ -38,3 +38,15 @@
 .pagination {
     color: aliceblue;
 }
+.pagination a, .pagination svg{
+    color: white !important;
+}
+.pagination .ant-pagination-item-active a{
+    color: black !important;
+}
+.btn-totop .anticon svg{
+    color: black !important;
+}
+.ant-pagination-item-ellipsis{
+    color: white !important;
+}

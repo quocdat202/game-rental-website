@@ -25,8 +25,8 @@ const About = () => {
     };
 
     return (
-        <div style={{ paddingLeft: '40%' }}>
-            <div style={{ width: '50%', display: 'flex', flexDirection: 'column' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{ width: '50%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                 <Button.Group
                     style={{
                         padding: '35px'

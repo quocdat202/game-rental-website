@@ -4,6 +4,7 @@ import { Input, Button } from 'antd';
 import { useState, useEffect } from 'react';
 import { Card, FloatButton, Pagination, TreeSelect } from 'antd';
 import { useHistory } from 'react-router-dom'
+import nodata from "../../Images/nodata.jpg"
 
 const { Meta } = Card;
 
@@ -14,7 +15,7 @@ const Store = ({ user, openNotificationWithIcon, addToCart }) => {
   const [data, setData] = useState()
   const [valueSearch, setValueSearch] = useState();
 
-  
+
 
   const { Search } = Input;
   const treeData = [
@@ -94,7 +95,7 @@ const Store = ({ user, openNotificationWithIcon, addToCart }) => {
   };
   return (
     <div style={{ paddingBottom: 50 }}>
-      <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', padding: '50px 0', flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', padding: '50px 10px', flexWrap: 'wrap' }}>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: 20 }}>
           <span style={{ color: 'white' }}>Search</span>
           <Search
@@ -107,13 +108,12 @@ const Store = ({ user, openNotificationWithIcon, addToCart }) => {
           />
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <span style={{ color: 'white' }}>Game genre</span>
+          <span style={{ color: 'white', paddingRight: 10 }}>Game genre</span>
           <TreeSelect
             showSearch
             treeIcon={true}
             style={{
-              width: 300,
-              marginLeft: 10
+              width: 200,
             }}
             value={valueSearch}
             dropdownStyle={{
@@ -170,13 +170,15 @@ const Store = ({ user, openNotificationWithIcon, addToCart }) => {
                   </div>
                 </Card>
               )
-            }) : 'No data'
+            }) : <div>
+              <img style={{ width: '80%' }} src={nodata} />
+            </div>
           }
         </div>
       </div>
 
-      <FloatButton.BackTop visibilityHeight={100} />
-      
+      <FloatButton.BackTop className='btn-totop' visibilityHeight={100} />
+
       <div>
         {
           data?.length > 0 && (

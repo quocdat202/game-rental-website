@@ -6,7 +6,7 @@ import { ArrowLeftOutlined } from '@ant-design/icons';
 import '../../Css/DetailCss.css'
 import { useHistory } from 'react-router-dom'
 
-const Detail = ({ match , addToCart }) => {
+const Detail = ({ match, addToCart }) => {
 
     const contentStyle = {
         height: '460px',
@@ -46,13 +46,13 @@ const Detail = ({ match , addToCart }) => {
     }
 
     return (
-        <div style={{ padding: '30px 30px', justifyContent: 'center', display: 'flex' }}>
-            <div style={{ color: 'white' }} onClick={() => history.push('/store')}>
+        <div style={{ padding: '30px 30px', justifyContent: 'center', display: 'flex', }}>
+            <div style={{ color: 'white', paddingRight: '10px' }} onClick={() => history.push('/store')}>
                 <ArrowLeftOutlined />
             </div>
 
             <Row>
-                <Col span={24} style={{ padding: '0 40px' }} >
+                <Col span={24} style={{ padding: '0 0' }} >
                     <div className='game-name'>
                         <h1>{data?.title}</h1>
                     </div>
@@ -72,28 +72,23 @@ const Detail = ({ match , addToCart }) => {
                     </div>
                 </Col>
 
-                <Col  >
-                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                        <div style={{ paddingTop: '10px' }}>
-                            <Space direction="vertical" size={12}>
-                                <Space wrap size={16}>
-                                    <h1>Communication :</h1><Avatar size={100} src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/2048px-Steam_icon_logo.svg.png' />
-                                </Space>
-                            </Space>
+                <div style={{ width: '100%', padding: '50px 0' }} >
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
+                            <h1>Communication:&nbsp;</h1>
+                            <Avatar size={100} src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/2048px-Steam_icon_logo.svg.png' />
                         </div>
-                        <div>
-                            <Row>
-                                <Col span={12} className='game-genre'>
-                                    <h1>Game genre: {data?.genre}</h1>
-                                </Col>
-                                <Col span={8} className='game-platform'>
-                                    <h1>Platform: {data?.platform}</h1>
-                                </Col>
-                            </Row>
+                        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                            <div className='game-genre'>
+                                <h1>Game genre: {data?.genre}</h1>
+                            </div>
+                            <div className='game-platform'>
+                                <h1>Platform: {data?.platform}</h1>
+                            </div>
                         </div>
                     </div>
-                    <div style={{paddingRight: '80%'}}>
-                        <Button className='btn' style={{ width: '100%', margin: '10px' }} onClick={() => addToCart(data)}>
+                    <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '30px 0', flexWrap: 'wrap' }}>
+                        <Button className='btn' style={{ margin: '10px' }} onClick={() => addToCart(data)}>
                             ADD TO CART
                         </Button>
 
@@ -101,13 +96,13 @@ const Detail = ({ match , addToCart }) => {
                             RENT THIS GAME WITH 0,05$ FOR 1 HOUR
                         </Button>
                     </div>
-                </Col>
+                </div>
 
-                <div className='description' style={{ marginTop: '40px' }}>
-                    <Col span={12} style={{ paddingBottom: '10px' }}>
+                <div className='description' >
+                    <div style={{ paddingBottom: '10px' }}>
                         <h1>Game information</h1>
                         {data?.description}
-                    </Col>
+                    </div>
                 </div>
             </Row>
         </div>

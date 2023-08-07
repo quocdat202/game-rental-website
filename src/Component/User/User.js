@@ -1,25 +1,40 @@
 import React from 'react'
 import { Avatar, Divider } from 'antd';
+import "../../Css/UserCss.css"
 
 const User = ({ user }) => {
     console.log("🚀 ~ file: User.js:5 ~ User ~ user:", user)
     return (
-        <div>
-            <div style={{ margin: '10px' }}>
-                <Avatar size={{ xs: 100, sm: 100, md: 100, lg: 100, xl: 100, xxl: 100 }} src={user?.avt} />
+        <div className='user-container'>
+            <div className="card-container">
+                <span className="pro">PRO</span>
+                <img className="round" src={user?.avt} alt="user" />
+                <h3>{user?.userName}</h3>
+                <h6>{user?.email}</h6>
+                <p>User interface designer and <br /> front-end developer</p>
+                <div className="buttons">
+                    <button className="primary">
+                        Message
+                    </button>
+                    <button className="primary ghost">
+                        Following
+                    </button>
+                </div>
+                <div className="skills">
+                    <h6>Skills</h6>
+                    <ul>
+                        <li>UI / UX</li>
+                        <li>Front End Development</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                        <li>Node</li>
+                    </ul>
+                </div>
             </div>
 
-            <Divider style={{ background: 'white' }} />
 
-            <div style={{ paddingTop: '10px' }}>
-                <h1>{user?.userName}</h1>
-            </div>
-
-            <Divider style={{ background: 'white' }} />
-
-            <div style={{ paddingTop: '10px' }}>
-                <p style={{ color: 'white', paddingTop: '10px' }}>{user?.email}</p>
-            </div>
         </div>
     )
 }
