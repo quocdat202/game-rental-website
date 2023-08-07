@@ -12,7 +12,7 @@ const RE4 = "https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2022/10/2114
 const DS = "https://s.yimg.com/uu/api/res/1.2/1krKB7Fmm5zERVPu4WqWvg--~B/aD0xMDgwO3c9MTkyMDthcHBpZD15dGFjaHlvbg--/https://s.yimg.com/os/creatr-uploaded-images/2023-01/918e3fd0-9d1b-11ed-bbfb-3c1d442192f8.cf.jpg";
 
 const contentStyle = {
-    height: '600px',
+    height: '500px',
     width: '100%',
     color: '#fff',
     lineHeight: '160px',
@@ -110,7 +110,7 @@ const Home = () => {
 
             </div>
             <div class='footer'>
-                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <div className='top-footer' style={{ display: 'flex', flexDirection: 'column' }}>
                     <div class='icon'>
                         <icon style={{ width: '100%', color: 'white', padding: '10px', mode: "horizontal" }}>
                             <FacebookOutlined />

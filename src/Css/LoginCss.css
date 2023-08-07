@@ -2,3 +2,11 @@
     background-image: url(https://w0.peakpx.com/wallpaper/305/41/HD-wallpaper-spider-man-ps4-spider.jpg);
     border-radius: 10px;
 }
+.login-sigup{
+    background-image: url(../Images/man2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 50px;
+    display: flex;
+    justify-content:center;
+}

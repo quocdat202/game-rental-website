@@ -39,11 +39,15 @@
     margin-top: 30px;
     padding: 20px 0 0 0;
     width: 100%;
-    background-image: url(../Images/footer.jpg);
     position: absolute;
-    z-index: 10000;
+    /* z-index: 10000; */
     display: flex;
     flex-direction: column;
+}
+
+.top-footer{
+    background-image: url(../Images/footer.jpg);
+    padding: 20px 0;
 }
 
 h1 {

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Card } from 'antd';
 import { useHistory } from 'react-router-dom'
+import cartEmty from "../../Images/cartEmty.png"
 
 const Library = ({ user }) => {
     const [dataCart, setDataCart] = useState()
-  const history = useHistory()
+    const history = useHistory()
 
     const { Meta } = Card
     useEffect(() => {
@@ -21,7 +22,7 @@ const Library = ({ user }) => {
                         dataCart?.length > 0 ? dataCart?.map((item) => {
                             return (
                                 <Card
-                                onClick={() => history.push(`/game/${item?.id}`)}
+                                    onClick={() => history.push(`/game/${item?.id}`)}
                                     hoverable
                                     style={{
                                         width: 320,
@@ -55,7 +56,11 @@ const Library = ({ user }) => {
 
                                 </Card>
                             )
-                        }) : 'Cart is empty'
+                        }) :
+                            <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', color: 'white', alignItems: 'center' }}>
+                                <img style={{ width: '50%' }} src={cartEmty} />
+                                <span >Cart is empty</span>
+                            </div>
                     }
                 </div>
             </div>

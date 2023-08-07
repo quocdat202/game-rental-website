@@ -4,9 +4,11 @@ import { Button, Form, Input, Space } from 'antd';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import '../../Css/RegisterCss.css'
+import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
 
 const Register = ({ notificationLogin }) => {
+    const [screenHeight, setScreenHeight] = useState(window.innerHeight);
     const onFinish = (values) => {
         console.log('Received values of form: ', values);
     };
@@ -51,22 +53,28 @@ const Register = ({ notificationLogin }) => {
         }
     }
 
+    useEffect(() => {
+        const handleResize = () => {
+            setScreenHeight(window.innerHeight);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        // Clean up the event listener when component unmounts
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
 
 
     return (
-        <div style={{ width: '300px', paddingLeft: '34%', paddingTop: '50px' }}>
-            <div>
+        <div className='login-sigup' style={{ minHeight: screenHeight - 40 }} >
+            <div style={{ padding: '0 30px' }}>
                 <Form name="basic"
-                    labelCol={{
-                        span: 8,
-                    }}
-                    wrapperCol={{
-                        span: 16,
-                    }}
                     style={{
-                        maxWidth: 'none',
-                        width: 500,
+                        width: '100%',
+                        padding: '0 30px',
                         height: '600px'
                     }}
                     initialValues={{
@@ -74,51 +82,55 @@ const Register = ({ notificationLogin }) => {
                     }}
                     onFinish={handleSignUp}
                     autoComplete="off"
-                    className='form-register'
+                    className='form-login'
                 >
-                    <div style={{ paddingLeft: '16%', width: '100%', paddingTop: '80px' }}>
+                    <div style={{ paddingTop: '80px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                         <Form.Item
                             name="username"
+                            style={{ display: 'flex', justifyContent: 'center' }}
                             rules={[
                                 {
                                     required: true,
                                     message: 'Please input your User Name!',
                                 },
                             ]} >
-                            <Input placeholder='Username' />
+                            <Input style={{ width: '300px' }} placeholder='Username' />
                         </Form.Item>
 
                         <Form.Item
                             name="email"
+                            style={{ display: 'flex', justifyContent: 'center' }}
                             rules={[
                                 {
                                     required: true,
                                     message: 'Please input your email!',
                                 },
                             ]}>
-                            <Input placeholder='Email' />
+                            <Input style={{ width: '300px' }} placeholder='Email' />
                         </Form.Item>
 
                         <Form.Item
                             name="password"
+                            style={{ display: 'flex', justifyContent: 'center' }}
                             rules={[
                                 {
                                     required: true,
                                     message: 'Please input your password!',
                                 },
                             ]} >
-                            <Input.Password placeholder='Password' />
+                            <Input.Password style={{ width: '300px' }} placeholder='Password' />
                         </Form.Item>
 
                         <Form.Item
                             name="confirmPassword"
+                            style={{ display: 'flex', justifyContent: 'center' }}
                             rules={[
                                 {
                                     required: true,
                                     message: 'Confirm your password!',
                                 },
                             ]} >
-                            <Input.Password placeholder='Confirm Password' />
+                            <Input.Password style={{ width: '300px' }} placeholder='Confirm Password' />
                         </Form.Item>
                     </div>
                     <Form.Item
