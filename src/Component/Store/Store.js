@@ -120,7 +120,7 @@ const Store = ({ user, openNotificationWithIcon, addToCart }) => {
               maxHeight: 400,
               overflow: 'auto',
             }}
-            placeholder="Please select category game"
+            placeholder="Select category"
             allowClear
             treeDefaultExpandAll
             onChange={onChange}

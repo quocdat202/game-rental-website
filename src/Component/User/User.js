@@ -11,7 +11,6 @@ const User = ({ user }) => {
                 <img className="round" src={user?.avt} alt="user" />
                 <h3>{user?.userName}</h3>
                 <h6>{user?.email}</h6>
-                <p>User interface designer and <br /> front-end developer</p>
                 <div className="buttons">
                     <button className="primary">
                         Message
@@ -21,15 +20,9 @@ const User = ({ user }) => {
                     </button>
                 </div>
                 <div className="skills">
-                    <h6>Skills</h6>
+                    <h6>Status</h6>
                     <ul>
-                        <li>UI / UX</li>
-                        <li>Front End Development</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>React</li>
-                        <li>Node</li>
+                        <li>Account VIP</li>
                     </ul>
                 </div>
             </div>

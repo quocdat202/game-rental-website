@@ -40,7 +40,7 @@ const About = () => {
                 </Button.Group>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <Col style={{ background: 'white', width: '260px' }} className='QR-Code'>
+                <Col style={{ background: 'white', width: size }} className='QR-Code'>
                     <QRCode
                         errorLevel="H"
                         size={size}

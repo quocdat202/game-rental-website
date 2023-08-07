@@ -1,13 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { Card } from 'antd';
+import { Card, Button } from 'antd';
 import { useHistory } from 'react-router-dom'
 import cartEmty from "../../Images/cartEmty.png"
 
 const Library = ({ user }) => {
-    const [dataCart, setDataCart] = useState()
-    const history = useHistory()
-
     const { Meta } = Card
+    const history = useHistory()
+    const [dataCart, setDataCart] = useState()
+
+    const totalMoney = () => {
+        let totalMoney = 0
+        if (dataCart.length > 0) {
+            dataCart.forEach(element => {
+                totalMoney += (element.id * 23)
+            });
+        }
+        return totalMoney
+    }
+
+
     useEffect(() => {
         const inCart = localStorage.getItem(`carts${user?.uid}`)
         if (inCart) {
@@ -16,6 +27,13 @@ const Library = ({ user }) => {
     }, []);
     return (
         <div>
+            <div style={{ paddingTop: 30, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
+                <h2 style={{ color: 'white' }}>Total Money:&nbsp;{dataCart?.length > 0 ? totalMoney().toLocaleString() + "$" : ''}</h2>&nbsp;&nbsp;
+                <Button className='btn' style={{ margin: '10px' }} >
+                    Rent now
+                </Button>
+            </div>
+
             <div className='games'>
                 <div className='content'>
                     {
@@ -64,7 +82,7 @@ const Library = ({ user }) => {
                     }
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
