@@ -27,12 +27,15 @@ const Library = ({ user }) => {
     }, []);
     return (
         <div>
-            <div style={{ paddingTop: 30, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
-                <h2 style={{ color: 'white' }}>Total Money:&nbsp;{dataCart?.length > 0 ? totalMoney().toLocaleString() + "$" : ''}</h2>&nbsp;&nbsp;
-                <Button className='btn' style={{ margin: '10px' }} >
-                    Rent now
-                </Button>
-            </div>
+            {
+                dataCart?.length > 0 ? <div style={{ paddingTop: 30, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
+                    <h2 style={{ color: 'white' }}>Total Money:&nbsp;{dataCart?.length > 0 ? totalMoney().toLocaleString() + "$" : ''}</h2>&nbsp;&nbsp;
+                    <Button className='btn' style={{ margin: '10px' }} >
+                        Rent now
+                    </Button>
+                </div> : ''
+            }
+
 
             <div className='games'>
                 <div className='content'>
