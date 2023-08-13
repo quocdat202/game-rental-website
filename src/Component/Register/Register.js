@@ -49,6 +49,8 @@ const Register = ({ notificationLogin }) => {
                 console.log('Thông tin người dùng:', result.user.displayName);
             } catch (error) {
                 console.log(error.message);
+                notificationLogin('error', 'Email, password is incorrect or email already exists')
+
             }
         }
     }
