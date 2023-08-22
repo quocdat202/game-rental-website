@@ -3,7 +3,7 @@ import { Avatar, Divider } from 'antd';
 import "../../Css/UserCss.css"
 
 const User = ({ user }) => {
-    console.log("🚀 ~ file: User.js:5 ~ User ~ user:", user)
+    // console.log("🚀 ~ file: User.js:5 ~ User ~ user:", user)
     return (
         <div className='user-container'>
             <div className="card-container">

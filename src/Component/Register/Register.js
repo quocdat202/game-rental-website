@@ -10,12 +10,12 @@ import { useHistory } from 'react-router-dom'
 const Register = ({ notificationLogin }) => {
     const [screenHeight, setScreenHeight] = useState(window.innerHeight);
     const onFinish = (values) => {
-        console.log('Received values of form: ', values);
+        // console.log('Received values of form: ', values);
     };
     const history = useHistory()
 
     const handleSignUp = async (value) => {
-        console.log("🚀 ~ file: Register.js:12 ~ handleSignUp ~ value:", value)
+        // console.log("🚀 ~ file: Register.js:12 ~ handleSignUp ~ value:", value)
 
         const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
         // const phoneRegex = /^\d{9}$/;
@@ -46,7 +46,7 @@ const Register = ({ notificationLogin }) => {
                 });
                 history.push("/login")
                 notificationLogin('success', 'Register success !')
-                console.log('Thông tin người dùng:', result.user.displayName);
+                // console.log('Thông tin người dùng:', result.user.displayName);
             } catch (error) {
                 console.log(error.message);
                 notificationLogin('error', 'Email, password is incorrect or email already exists')

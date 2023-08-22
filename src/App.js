@@ -76,8 +76,7 @@ function App() {
       ...item,
       userID: user?.uid
     }
-    console.log("🚀 ~ file: Store.js:20 ~ addToCart ~ cart:", cart)
-    console.log("🚀 ~ file: Store.js:20 ~ addToCart ~ user:", user)
+    
     if (user?.uid) {
       if (inCart) {
         let isCart = JSON.parse(inCart)
