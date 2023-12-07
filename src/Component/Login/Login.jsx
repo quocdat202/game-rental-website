@@ -12,8 +12,6 @@ const Login = ({ notificationLogin }) => {
     const [screenHeight, setScreenHeight] = useState(window.innerHeight);
 
     const handleLogin = async (values) => {
-        console.log("🚀 ~ file: Login.js:14 ~ handleLogin ~ values:", values);
-
         try {
             await firebase.auth().signInWithEmailAndPassword(values?.email, values?.password);
 

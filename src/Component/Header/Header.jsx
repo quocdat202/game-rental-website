@@ -84,7 +84,6 @@ const Header = ({ user, notificationLogin }) => {
                 key: 'logout'
             } : '',
     ];
-    console.log("🤔🤔🤔 ~ file: Header.js:10 ~ Header ~ user:", user)
 
     const handleOk = () => {
         setConfirmLoading(true);
