@@ -95,11 +95,10 @@ const Store = ({ user, openNotificationWithIcon, addToCart }) => {
   };
   return (
     <div style={{ paddingBottom: 50 }}>
-      <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', padding: '50px 10px', flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', padding: '50px 10px', flexWrap: 'wrap', maxWidth: '1200px', paddingLeft: '250px'}}>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: 20 }}>
-          <span style={{ color: 'white' }}>Search</span>
           <Search
-            placeholder="input search name game"
+            placeholder="Search name game"
             onSearch={request}
             style={{
               width: 300,
@@ -108,7 +107,6 @@ const Store = ({ user, openNotificationWithIcon, addToCart }) => {
           />
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <span style={{ color: 'white', paddingRight: 10 }}>Game genre</span>
           <TreeSelect
             showSearch
             treeIcon={true}
@@ -142,13 +140,13 @@ const Store = ({ user, openNotificationWithIcon, addToCart }) => {
                     height: 390,
                     paddingBottom: 10,
                     marginBottom: 20,
-                    marginRight: 20
+                    marginRight: 20,
                   }}
                   cover={
                     <img alt={item?.thumbnail} src={item?.thumbnail} />
                   }
                   actions={[
-                    <span style={{ fontWeight: '500', color: 'black' }}>Price: {(item?.id * 23).toLocaleString()}$</span>,
+                    <span style={{ fontWeight: '500', color: 'black' }}>Price: ${(item?.id * 23).toLocaleString()}</span>,
                     <Button className='btn' onClick={() => addToCart(item)}>ADD TO CART</Button>
                   ]}
                 >

@@ -54,10 +54,10 @@ const Detail = ({ match, addToCart }) => {
             <Row>
                 <Col span={24} style={{ padding: '0 0' }} >
                     <div className='game-name'>
-                        <h1>{data?.title}</h1>
+                        <h1 style={{ maxWidth: '100%' }}>{data?.title}</h1>
                     </div>
 
-                    <div>
+                    <div style={{ maxWidth: '1200px', paddingLeft: '250px' }}>
                         <Carousel autoplay>
                             {
                                 data?.screenshots?.map((item) => {
@@ -73,12 +73,12 @@ const Detail = ({ match, addToCart }) => {
                 </Col>
 
                 <div style={{ width: '100%', padding: '50px 0' }} >
-                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', maxWidth: '1200px', paddingLeft: '250px' }}>
                         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
                             <h1>Communication:&nbsp;</h1>
                             <Avatar size={100} src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/2048px-Steam_icon_logo.svg.png' />
                         </div>
-                        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', paddingTop: '20px' }}>
                             <div className='game-genre'>
                                 <h1>Game genre: {data?.genre}</h1>
                             </div>
@@ -97,11 +97,12 @@ const Detail = ({ match, addToCart }) => {
                         </Button>
                     </div>
                 </div>
-
-                <div className='description' >
-                    <div style={{ paddingBottom: '10px' }}>
-                        <h1>Game information</h1>
-                        {data?.description}
+                <div style={{paddingLeft: '100px'}}>
+                    <div className='description' >
+                        <div style={{ marginTop: '20px' }}>
+                            <h1>Game information</h1>
+                            {data?.description}
+                        </div>
                     </div>
                 </div>
             </Row>

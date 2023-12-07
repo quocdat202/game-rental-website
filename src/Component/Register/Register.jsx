@@ -71,8 +71,8 @@ const Register = ({ notificationLogin }) => {
 
 
     return (
-        <div className='login-sigup' style={{ minHeight: screenHeight - 40 }} >
-            <div style={{ padding: '0 30px' }}>
+        <div className='login-sigup' style={{ minHeight: screenHeight - 46 }} >
+            <div style={{ padding: '0 30px'}}>
                 <Form name="basic"
                     style={{
                         width: '100%',
@@ -86,7 +86,7 @@ const Register = ({ notificationLogin }) => {
                     autoComplete="off"
                     className='form-login'
                 >
-                    <div style={{ paddingTop: '80px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <div style={{ paddingTop: '80px', display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '400px'}}>
                         <Form.Item
                             name="username"
                             style={{ display: 'flex', justifyContent: 'center' }}
@@ -142,8 +142,8 @@ const Register = ({ notificationLogin }) => {
                         style={{
                             paddingBottom: '20px'
                         }} >
-                        <Button type="primary" htmlType="submit">
-                            Register
+                        <Button type="primary" htmlType="submit" style={{backgroundColor: 'black', height: '40px', width: '100px'}}>
+                            <p style={{fontSize: '17px'}}>Register</p>
                         </Button>
                     </Form.Item>
                 </Form>

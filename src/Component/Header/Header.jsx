@@ -101,7 +101,7 @@ const Header = ({ user, notificationLogin }) => {
     return (
         <Affix offsetTop={top}>
             <div>
-                <Menu style={{ background: 'gray', color: 'white' }} onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
+                <Menu style={{ backgroundColor: '#1f1f1f', color: 'white', borderBottom: '2px solid #ff4500'}} onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
                 <Modal
                     title="Log out"
                     open={open}

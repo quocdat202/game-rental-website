@@ -5,6 +5,7 @@ import '../Css/AboutCss.css'
 
 const About = () => {
     const [size, setSize] = useState(260);
+    const [screenHeight, setScreenHeight] = useState(window.innerHeight);
     const increase = () => {
         setSize((prevSize) => {
             const newSize = prevSize + 10;
@@ -25,7 +26,7 @@ const About = () => {
     };
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', minHeight: screenHeight - 46 }} className='container'>
             <div style={{ width: '50%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                 <Button.Group
                     style={{

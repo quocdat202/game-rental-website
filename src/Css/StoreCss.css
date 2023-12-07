@@ -23,6 +23,7 @@
     justify-content: center;
     align-items: center;
     padding: 30px;
+    max-width: 1200px;
 }
 
 .card {
@@ -38,15 +39,24 @@
 .pagination {
     color: aliceblue;
 }
-.pagination a, .pagination svg{
+
+.pagination a,
+.pagination svg {
     color: white !important;
 }
-.pagination .ant-pagination-item-active a{
+
+.pagination .ant-pagination-item-active a {
     color: black !important;
 }
-.btn-totop .anticon svg{
+
+.btn-totop .anticon svg {
     color: black !important;
 }
-.ant-pagination-item-ellipsis{
+
+.ant-pagination-item-ellipsis {
     color: white !important;
+}
+
+.btn {
+    font-family: 'Times New Roman', Times, serif;
 }

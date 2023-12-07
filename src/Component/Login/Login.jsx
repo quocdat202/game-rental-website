@@ -47,7 +47,7 @@ const Login = ({ notificationLogin }) => {
         };
     }, []);
     return (
-        <div className='login-sigup' style={{ minHeight: screenHeight - 40 }}>
+        <div className='login-sigup' style={{ minHeight: screenHeight - 46 }}>
             <div style={{ padding: '0 30px' }}>
                 <Form name="basic"
                     style={{
@@ -62,7 +62,7 @@ const Login = ({ notificationLogin }) => {
                     autoComplete="off"
                     className='form-login'
                 >
-                    <div style={{ paddingTop: '80px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <div style={{ paddingTop: '80px', display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '400px'}}>
                         <Form.Item
                             name="email"
                             style={{ display: 'flex', justifyContent: 'center' }}
@@ -98,7 +98,7 @@ const Login = ({ notificationLogin }) => {
 
                     <Form.Item wrapperCol={{ offset: 0.5 }}>
                         <Button
-                            style={{ margin: '10px', marginRight: 10 }}
+                            style={{ margin: '10px', marginRight: 10, backgroundColor: 'red', color: 'white', width: '100px', height: '40px'}}
                             onClick={handleGoogleLogin}>
                             <icon style={{ padding: '5px' }}><GoogleOutlined /></icon>
                             Google
@@ -106,8 +106,8 @@ const Login = ({ notificationLogin }) => {
                     </Form.Item>
 
                     <Form.Item wrapperCol={{ offset: 0.5 }} style={{ paddingBottom: '20px' }}>
-                        <Button type="primary" htmlType="submit" className="login-form-button">
-                            Login
+                        <Button type="primary" htmlType="submit" className="login-form-button" style={{backgroundColor: 'black', height: '40px', width: '100px'}}>
+                            <p style={{fontSize: '17px'}}>Login</p>
                         </Button>
                     </Form.Item>
                 </Form>

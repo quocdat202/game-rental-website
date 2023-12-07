@@ -18,7 +18,7 @@ import { Button, Radio, Form, Input, message, Col, notification } from 'antd';
 import User from './Component/User/User';
 import About from './Component/About';
 import Detail from './Component/Detail/Detail';
-import Checkpoint2 from './Component/Checkpoint2/Checkpoint2';
+// import Checkpoint2 from './Component/Checkpoint2/Checkpoint2';
 import Library from './Component/Library/Library';
 
 
@@ -128,7 +128,7 @@ function App() {
 
         <Route path='/game/:id' exact component={(match) => <Detail match={match} addToCart={addToCart} />}  ></Route>
 
-        <Route path='/checkpoint' exact component={() => <Checkpoint2 />}></Route>
+        {/* <Route path='/checkpoint' exact component={() => <Checkpoint2 />}></Route> */}
 
         <Route path='/library' exact component={() => <Library user={user} />}></Route>
 
