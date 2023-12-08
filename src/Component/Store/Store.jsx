@@ -95,7 +95,7 @@ const Store = ({ user, openNotificationWithIcon, addToCart }) => {
   };
   return (
     <div style={{ paddingBottom: 50 }}>
-      <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', padding: '50px 10px', flexWrap: 'wrap', maxWidth: '1200px', paddingLeft: '250px'}}>
+      <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', padding: '50px 10px', flexWrap: 'wrap'}}>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: 20 }}>
           <Search
             placeholder="Search name game"

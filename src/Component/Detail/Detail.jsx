@@ -57,7 +57,7 @@ const Detail = ({ match, addToCart }) => {
                         <h1 style={{ maxWidth: '100%' }}>{data?.title}</h1>
                     </div>
 
-                    <div style={{ maxWidth: '1200px', paddingLeft: '250px' }}>
+                    <div style={{ paddingRight: '35px' }}>
                         <Carousel autoplay>
                             {
                                 data?.screenshots?.map((item) => {
@@ -73,7 +73,7 @@ const Detail = ({ match, addToCart }) => {
                 </Col>
 
                 <div style={{ width: '100%', padding: '50px 0' }} >
-                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', maxWidth: '1200px', paddingLeft: '250px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
                         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
                             <h1>Communication:&nbsp;</h1>
                             <Avatar size={100} src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/2048px-Steam_icon_logo.svg.png' />
@@ -97,8 +97,8 @@ const Detail = ({ match, addToCart }) => {
                         </Button>
                     </div>
                 </div>
-                <div style={{paddingLeft: '100px'}}>
-                    <div className='description' >
+                <div style={{ paddingRight: '35px' }}>
+                    <div className='description'>
                         <div style={{ marginTop: '20px' }}>
                             <h1>Game information</h1>
                             {data?.description}

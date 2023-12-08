@@ -6,29 +6,20 @@
 .played-the-most {
     padding-right: 65%;
 }
-.game-played-the-most{
+
+.game-played-the-most {
     margin-top: 50px;
 }
 
-.game-played-the-most h1{
+.game-played-the-most h1 {
     padding-bottom: 20px;
-}
-
-.slide-img {
-    max-width: 1200px;
-}
-
-.slide-show {
-    padding-left: 200px;
-    padding-right: 200px;
-    padding-top: 20px;
 }
 
 .Update {
     padding-top: 50px;
 }
 
-.Update h1{
+.Update h1 {
     padding-bottom: 20px;
 }
 

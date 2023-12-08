@@ -41,6 +41,7 @@
 	width: 350px;
 	max-width: 100%;
 	text-align: center;
+	border: 2px solid #ff4500;
 }
 
 .card-container .pro {
@@ -96,6 +97,8 @@
 	font-size: 12px;
 	margin: 0 7px 7px 0;
 	padding: 7px;
+	border: 1px solid #ff4500;
+	color: gold;
 }
 
 .Home-container footer {

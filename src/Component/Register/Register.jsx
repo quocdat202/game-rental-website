@@ -77,7 +77,7 @@ const Register = ({ notificationLogin }) => {
                     style={{
                         width: '100%',
                         padding: '0 30px',
-                        height: '600px'
+                        height: '500px'
                     }}
                     initialValues={{
                         remember: true,
@@ -86,13 +86,13 @@ const Register = ({ notificationLogin }) => {
                     autoComplete="off"
                     className='form-login'
                 >
-                    <div style={{ paddingTop: '80px', display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '400px'}}>
+                    <div style={{ paddingTop: '80px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                         <Form.Item
                             name="username"
                             style={{ display: 'flex', justifyContent: 'center' }}
                             rules={[
                                 {
-                                    required: true,
+                                    required: true, 
                                     message: 'Please input your User Name!',
                                 },
                             ]} >
