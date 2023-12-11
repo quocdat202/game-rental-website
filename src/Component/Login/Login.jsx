@@ -96,18 +96,25 @@ const Login = ({ notificationLogin }) => {
 
                     <Form.Item wrapperCol={{ offset: 0.5 }}>
                         <Button
-                            style={{ margin: '10px', marginRight: 10, backgroundColor: 'red', color: 'white', width: '100px', height: '40px'}}
+                            style={{ margin: '10px', marginRight: 10, backgroundColor: 'red', color: 'white', width: '100px', height: '40px' }}
                             onClick={handleGoogleLogin}>
                             <icon style={{ padding: '5px' }}><GoogleOutlined /></icon>
                             Google
                         </Button>
                     </Form.Item>
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <Form.Item wrapperCol={{ offset: 0.5 }} style={{ paddingBottom: '20px', margin: '10px' }}>
+                            <Button type="primary" htmlType="submit" className="login-form-button" style={{ backgroundColor: 'black', height: '40px', width: '100px' }}>
+                                <p style={{ fontSize: '17px' }}>Login</p>
+                            </Button>
+                        </Form.Item>
+                        <Form.Item wrapperCol={{ offset: 0.5 }} style={{ paddingBottom: '20px', margin: '10px' }}>
+                            <Button type="primary" onClick={() => history.push("/register")} style={{ backgroundColor: 'black', height: '40px', width: '100px' }}>
+                                Sign up
+                            </Button>
+                        </Form.Item>
+                    </div>
 
-                    <Form.Item wrapperCol={{ offset: 0.5 }} style={{ paddingBottom: '20px' }}>
-                        <Button type="primary" htmlType="submit" className="login-form-button" style={{backgroundColor: 'black', height: '40px', width: '100px'}}>
-                            <p style={{fontSize: '17px'}}>Login</p>
-                        </Button>
-                    </Form.Item>
                 </Form>
             </div>
         </div>

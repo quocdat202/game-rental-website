@@ -18,7 +18,6 @@ const Library = ({ user }) => {
         return totalMoney
     }
 
-
     useEffect(() => {
         const inCart = localStorage.getItem(`carts${user?.uid}`)
         if (inCart) {

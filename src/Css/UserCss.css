@@ -57,7 +57,7 @@
 }
 
 .card-container .round {
-	border: 1px solid #03BFCB;
+	border: 1px solid red;
 	border-radius: 50%;
 	padding: 7px;
 }

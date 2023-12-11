@@ -33,6 +33,7 @@ const Header = ({ user, notificationLogin }) => {
             history.push(`/${e.key}`)
         }
     };
+
     const items = [
         {
             label: 'Home',
@@ -59,11 +60,6 @@ const Header = ({ user, notificationLogin }) => {
                 label: 'Login',
                 key: 'login',
                 icon: <UserOutlined />,
-            } : '',
-        !user ?
-            {
-                label: 'Register',
-                key: 'register',
             } : '',
         user ?
             {
@@ -100,16 +96,19 @@ const Header = ({ user, notificationLogin }) => {
     return (
         <Affix offsetTop={top}>
             <div>
-                <Menu style={{ backgroundColor: '#1f1f1f', color: 'white', borderBottom: '2px solid #ff4500'}} onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
-                <Modal
-                    title="Log out"
-                    open={open}
-                    onOk={handleOk}
-                    confirmLoading={confirmLoading}
-                    onCancel={handleCancel}
-                >
-                    <p>Are you sure you want to log out?</p>
-                </Modal>
+                <div  style={{ paddingLeft: '500px' }}>
+                    
+                </div>
+                <Menu style={{ backgroundColor: 'rgb(21, 21, 21)', color: 'white', borderBottom: '2px solid #ff4500', width: '100%' }} onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />
+                    <Modal
+                        title="Log out"
+                        open={open}
+                        onOk={handleOk}
+                        confirmLoading={confirmLoading}
+                        onCancel={handleCancel}
+                    >
+                        <p>Are you sure you want to log out?</p>
+                    </Modal>
             </div>
         </Affix>
     )
