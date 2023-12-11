@@ -109,7 +109,7 @@ const Login = ({ notificationLogin }) => {
                             </Button>
                         </Form.Item>
                         <Form.Item wrapperCol={{ offset: 0.5 }} style={{ paddingBottom: '20px', margin: '10px' }}>
-                            <Button type="primary" onClick={() => history.push("/register")} style={{ backgroundColor: 'black', height: '40px', width: '100px' }}>
+                            <Button type="primary" onClick={() => history.push("/register")} style={{ backgroundColor: 'White', height: '40px', width: '100px', color: 'black' }}>
                                 Sign up
                             </Button>
                         </Form.Item>
