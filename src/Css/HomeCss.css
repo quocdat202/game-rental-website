@@ -36,41 +36,35 @@ body {
     color: #fff;
 }
 
-#footer {
-    background-color: #212121;
-    padding: 20px;
-    text-align: center;
-    bottom: 0;
-    width: 100%;
-    border-top: 2px solid #ff4500;
+.footer-container {
+    background-color: rgb(21, 21, 21);
+    color: white;
 }
 
-#footer p {
-    margin: 0;
-}
-
-#footer a {
+.footer-heading {
+    font-size: 1.8rem;
     color: #ff4500;
-    text-decoration: none;
-    transition: color 0.3s ease;
+    padding-bottom: 10px;
 }
 
-#footer a:hover {
-    color: #fff;
-}
-
-.social-icons {
+.footer-text {
+    font-size: 14px;
     margin-top: 10px;
 }
 
-.social-icons a {
-    display: inline-block;
-    margin: 0 10px;
-    color: #fff;
-    font-size: 20px;
-    transition: color 0.3s ease;
+.footer-divider {
+    border-top: 2px solid #ff4500;
+    margin: 20px 0;
 }
 
-.social-icons a:hover {
+.footer-copyright {
+    font-size: 0.8rem;
+    text-align: center;
+    padding-bottom: 10px;
+    color: #777;
+}
+
+.footer-heading:hover,
+.footer-text:hover {
     color: #ff4500;
 }

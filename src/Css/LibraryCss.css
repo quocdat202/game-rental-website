@@ -1,0 +1,36 @@
+.games {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card-description {
+    height: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Tăng kích thước của ảnh trong thẻ Card */
+.ant-card-cover img {
+    max-height: 200px;
+}
+
+/* Tăng kích thước của nút Remove */
+.ant-btn-link {
+    padding: 0;
+    font-size: 14px;
+}

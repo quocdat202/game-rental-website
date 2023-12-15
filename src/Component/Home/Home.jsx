@@ -1,8 +1,8 @@
 import '../../Css/HomeCss.css'
 import React from 'react';
-import { Carousel } from 'antd';
-import { Image } from 'antd';
+import { Carousel, Row, Col, Divider } from 'antd';
 import { FacebookOutlined, InstagramOutlined, TwitterOutlined } from '@ant-design/icons';
+import { Image } from 'antd';
 import "../../Css/UserCss.css"
 
 const Spiderman1 = "https://cdn.neowin.com/news/images/uploaded/2022/08/1660227400_marvels-spider-man-keyart-01-en-10jun22.jpg";
@@ -113,16 +113,32 @@ const Home = () => {
 
             </div>
             <div>
-                <div id="footer">
-                    <p>&copy; 2023 Your Game Store. All rights reserved. |
-                        <a href="#">Terms of Service</a> |
-                        <a href="#">Privacy Policy</a>
-                    </p>
-                    <div class="social-icons">
-                        <a href="#" target="_blank"><FacebookOutlined /></a>
-                        <a href="#" target="_blank"><TwitterOutlined /></a>
-                        <a href="#" target="_blank"><InstagramOutlined /></a>
-                    </div>
+                <div className="footer-container">
+                    <Divider style={{ backgroundColor: '#777' }} />
+                    <Row justify="space-around" align="middle">
+                        <Col xs={24} sm={12} md={6}>
+                            <h3 className="footer-heading">Contact Us</h3>
+                            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                <h1 style={{ padding: '5px' }}><FacebookOutlined /></h1>
+                                <h1 style={{ padding: '5px' }}><TwitterOutlined /></h1>
+                                <h1 style={{ padding: '5px' }}><InstagramOutlined /></h1>
+                            </div>
+                        </Col>
+                        <Col xs={24} sm={12} md={6} style={{ borderLeft: '1px solid #ff4500' }}>
+                            <h3 className="footer-heading">About Us</h3>
+                            <p className="footer-text">Discover the gaming world with Gamer Zone. We bring you the latest updates, reviews, and community events.</p>
+                        </Col>
+                        <Col xs={24} sm={12} md={6} style={{ borderLeft: '1px solid #ff4500' }}>
+                            <h3 className="footer-heading">Popular Games</h3>
+                            <p className="footer-text">Explore the top trending games and stay ahead in the gaming community.</p>
+                        </Col>
+                        <Col xs={24} sm={12} md={6} style={{ borderLeft: '1px solid #ff4500' }}>
+                            <h3 className="footer-heading">Connect</h3>
+                            <p className="footer-text">Join our gaming community to connect with fellow gamers, share experiences, and participate in events.</p>
+                        </Col>
+                    </Row>
+                    <Divider className="footer-divider" />
+                    <p className="footer-copyright">© 2023 Gamer Zone. All rights reserved.</p>
                 </div>
             </div>
         </div >

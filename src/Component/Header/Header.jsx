@@ -4,6 +4,7 @@ import { Affix, Avatar, Input, Dropdown, Menu, Modal, Space } from 'antd';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom'
 import firebase from 'firebase/compat/app';
+import '../../Css/HeaderCss.css'
 import 'firebase/compat/auth';
 
 const Header = ({ user, notificationLogin }) => {

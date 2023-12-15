@@ -22,6 +22,7 @@ import Detail from './Component/Detail/Detail';
 import Library from './Component/Library/Library';
 
 
+
 function App() {
   const [user, setUser] = useState({
     userName: '',
@@ -130,7 +131,6 @@ function App() {
         {/* <Route path='/checkpoint' exact component={() => <Checkpoint2 />}></Route> */}
 
         <Route path='/library' exact component={() => <Library user={user} />}></Route>
-
       </div>
     </Router>
   );
