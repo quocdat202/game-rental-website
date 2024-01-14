@@ -95,7 +95,7 @@ const Store = ({ user, openNotificationWithIcon, addToCart }) => {
   };
   return (
     <div style={{ paddingBottom: 50 }}>
-      <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', padding: '50px 10px', flexWrap: 'wrap'}}>
+      <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', padding: '50px 10px', flexWrap: 'wrap' }}>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: 20 }}>
           <Search
             placeholder="Search name game"
@@ -143,7 +143,11 @@ const Store = ({ user, openNotificationWithIcon, addToCart }) => {
                     marginRight: 20,
                   }}
                   cover={
-                    <img alt={item?.thumbnail} src={item?.thumbnail} />
+                    <div>
+                      <Button type="link" onClick={() => history.push(`/game/${item?.id}`)} style={{ padding: 0 }}>
+                        <img alt={item?.thumbnail} src={item?.thumbnail} style={{ maxWidth: '100%', maxHeight: '200px', objectFit: 'cover' }} />
+                      </Button>
+                    </div>
                   }
                   actions={[
                     <span style={{ fontWeight: '500', color: 'black' }}>Price: ${(item?.id * 23).toLocaleString()}</span>,

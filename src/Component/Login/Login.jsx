@@ -52,6 +52,7 @@ const Login = ({ notificationLogin }) => {
                         width: '100%',
                         padding: '0 30px',
                         height: '500px',
+                        boxShadow: '1px 1px 20px #ffff'
                     }}
                     initialValues={{
                         remember: true,
@@ -94,19 +95,19 @@ const Login = ({ notificationLogin }) => {
                     </div>
 
                     <Form.Item wrapperCol={{ offset: 0.5 }} style={{ paddingBottom: '20px', margin: '10px' }}>
-                        <Button type="primary" htmlType="submit" className="login-form-button" style={{ backgroundColor: 'black', height: '40px', width: '300px', fontWeight: 'bolder' }}>
+                        <Button type="primary" htmlType="submit" className="login-form-button" style={{ backgroundColor: 'black', height: '40px', width: '200px', fontWeight: 'bolder' }}>
                             <p style={{ fontSize: '17px' }}>Login</p>
                         </Button>
                     </Form.Item>
 
                     <Form.Item wrapperCol={{ offset: 0.5 }} style={{ paddingBottom: '20px', margin: '10px' }}>
-                        <Button type="primary" onClick={() => history.push("/register")} style={{ backgroundColor: 'White', height: '40px', width: '300px', color: 'black', fontWeight: 'bolder' }}>
+                        <Button type="primary" onClick={() => history.push("/register")} style={{ backgroundColor: 'White', height: '40px', width: '200px', color: 'black', fontWeight: 'bolder' }}>
                             Sign up
                         </Button>
                     </Form.Item>
                     <Form.Item wrapperCol={{ offset: 0.5 }}>
                         <Button
-                            style={{ margin: '10px', marginRight: 10, backgroundColor: 'red', color: 'white', width: '300px', height: '40px', fontWeight: 'bolder' }}
+                            style={{ margin: '10px', marginRight: 10, backgroundColor: 'red', color: 'white', width: '200px', height: '40px', fontWeight: 'bolder' }}
                             onClick={handleGoogleLogin}>
                             <icon style={{ padding: '5px' }}><GoogleOutlined /></icon>
                             Google

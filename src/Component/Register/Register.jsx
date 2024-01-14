@@ -77,7 +77,8 @@ const Register = ({ notificationLogin }) => {
                     style={{
                         width: '100%',
                         padding: '0 30px',
-                        height: '500px'
+                        height: '500px',
+                        boxShadow: '1px 1px 20px #ffff'
                     }}
                     initialValues={{
                         remember: true,

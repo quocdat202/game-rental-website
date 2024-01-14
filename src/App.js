@@ -77,7 +77,7 @@ function App() {
       ...item,
       userID: user?.uid
     }
-    
+
     if (user?.uid) {
       if (inCart) {
         let isCart = JSON.parse(inCart)
@@ -115,7 +115,7 @@ function App() {
 
         <Header notificationLogin={notificationLogin} user={user} />
 
-        <Route path='/' exact component={() => <Home />}></Route>
+        <Route path='/' exact component={() => <Home addToCart={addToCart} />}></Route>
         <Route path='/login' exact component={() => <Login notificationLogin={notificationLogin} />}></Route>
 
         <Route path='/store' exact component={() => <Store openNotificationWithIcon={openNotificationWithIcon} user={user} addToCart={addToCart} />}></Route>

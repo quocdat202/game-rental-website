@@ -68,3 +68,12 @@ body {
 .footer-text:hover {
     color: #ff4500;
 }
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    max-width: 1200px;
+}

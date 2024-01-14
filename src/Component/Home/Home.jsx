@@ -1,8 +1,11 @@
 import '../../Css/HomeCss.css'
 import React from 'react';
-import { Carousel, Row, Col, Divider } from 'antd';
+import { useState, useEffect } from 'react'
+import { Carousel, Row, Col, Divider, Button, Card } from 'antd';
 import { FacebookOutlined, InstagramOutlined, TwitterOutlined } from '@ant-design/icons';
 import { Image } from 'antd';
+import { useHistory } from 'react-router-dom'
+import nodata from "../../Images/nodata.jpg"
 import "../../Css/UserCss.css"
 
 const Spiderman1 = "https://cdn.neowin.com/news/images/uploaded/2022/08/1660227400_marvels-spider-man-keyart-01-en-10jun22.jpg";
@@ -24,7 +27,37 @@ const Imgstyle = {
     padding: '10px'
 };
 
-const Home = () => {
+const { Meta } = Card;
+
+const Home = ({ addToCart }) => {
+    const [data, setData] = useState()
+    const [offset, setOffset] = useState(0)
+    const [valueSearch, setValueSearch] = useState();
+    const [limit, setLimit] = useState(10)
+    const history = useHistory()
+
+    useEffect(() => {
+        request()
+    }, [valueSearch])
+
+    const request = async (value) => {
+        const url = `https://free-to-play-games-database.p.rapidapi.com/api/games${valueSearch ? '?category=' + valueSearch : ''}`;
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': 'ce2234ad95msh9d8c5043404fc84p1913a6jsn5df080088056',
+                'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
+            }
+        };
+        try {
+            const response = await fetch(url, options);
+            const result = await response.json();
+            value ? setData(result.filter((item) => item?.title?.toLowerCase().includes(value.toLowerCase()))) : setData(result)
+            console.log(result);
+        } catch (error) {
+            console.error(error);
+        }
+    }
     return (
         <div className='Home-container'>
             <div className='slide-show'>
@@ -46,71 +79,56 @@ const Home = () => {
                     </div>
                 </Carousel>
             </div>
-
-            <div className='game-played-the-most'>
-                <h1>Played the most</h1>
-
-                <Image
-                    style={Imgstyle}
-                    height={406}
-                    width={300}
-                    src="https://cdn.cdkeys.com/500x706/media/catalog/product/5/d/5de6658946177c5f23698932_19_.jpg"
-                />
-
-                <Image
-                    style={Imgstyle}
-                    height={406}
-                    width={300}
-                    src="https://cdn.cdkeys.com/500x706/media/catalog/product/s/g/sgvsvsfv.jpg"
-                />
-
-                <Image
-                    style={Imgstyle}
-                    height={406}
-                    width={300}
-                    src="https://cdn.cdkeys.com/500x706/media/catalog/product/f/a/fadad.jpg"
-                />
-
-                <Image
-                    style={Imgstyle}
-                    height={406}
-                    width={300}
-                    src="https://cdn.cdkeys.com/500x706/media/catalog/product/e/g/egs_wildhearts_koeitecmogamescoltd_s2_1200x1600-398fdb8dbc918051f99347ebe0335973_3_.jpg"
-                />
-
-            </div>
-            <div className='Update'>
-                <h1>Update</h1>
-
-                <Image
-                    style={Imgstyle}
-                    height={406}
-                    width={300}
-                    src="https://cdn.cdkeys.com/500x706/media/catalog/product/c/a/call-of-duty-modern-warfare-pc-cd-keys-discount_1.jpg"
-                />
-
-                <Image
-                    style={Imgstyle}
-                    height={406}
-                    width={300}
-                    src="https://cdn.cdkeys.com/500x706/media/catalog/product/o/u/outlast-2.jpg"
-                />
-                <Image
-                    style={Imgstyle}
-                    height={406}
-                    width={300}
-                    src="https://cdn.cdkeys.com/500x706/media/catalog/product/u/n/uno_pc_cover.jpg"
-
-                />
-
-                <Image
-                    style={Imgstyle}
-                    height={406}
-                    width={300}
-                    src="https://cdn.cdkeys.com/500x706/media/catalog/product/z/h/zhtghzj_1_1_1.jpg"
-
-                />
-
+            <div className='games'>
+                <div className='content'>
+                    {
+                        data?.length > 0 ? data.slice(offset, offset + limit).slice(0, 3).map((item, index) => {
+                            return (
+                                <Card
+                                    key={index}
+                                    hoverable
+                                    style={{
+                                        width: 320,
+                                        height: 390,
+                                        paddingBottom: 10,
+                                        marginBottom: 20,
+                                        marginRight: 20,
+                                    }}
+                                    cover={
+                                        <div>
+                                            <Button type="link" onClick={() => history.push(`/game/${item?.id}`)} style={{ padding: 0 }}>
+                                                <img alt={item?.thumbnail} src={item?.thumbnail} style={{ maxWidth: '100%', maxHeight: '200px', objectFit: 'cover' }} />
+                                            </Button>
+                                        </div>
+                                    }
+                                    actions={[
+                                        <span style={{ fontWeight: '500', color: 'black' }}>Price: ${(item?.id * 23).toLocaleString()}</span>,
+                                        <Button className='btn' onClick={() => addToCart(item)}>ADD TO CART</Button>
+                                    ]}
+                                >
+                                    <div onClick={() => history.push(`/game/${item?.id}`)}>
+                                        <Meta
+                                            title={item?.title}
+                                        />
+                                        <div className="card-description"
+                                            style={{
+                                                height: '70px',
+                                                overflow: 'hidden',
+                                                textOverflow: 'ellipsis',
+                                                display: '-webkit-box',
+                                                WebkitLineClamp: 3,
+                                                WebkitBoxOrient: 'vertical'
+                                            }}>
+                                            {item?.short_description}
+                                        </div>
+                                    </div>
+                                </Card>
+                            )
+                        }) : <div>
+                            <img style={{ width: '80%' }} src={nodata} />
+                        </div>
+                    }
+                </div>
             </div>
             <div>
                 <div className="footer-container">
