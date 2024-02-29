@@ -151,7 +151,7 @@ const Store = ({ user, openNotificationWithIcon, addToCart }) => {
                   }
                   actions={[
                     <span style={{ fontWeight: '500', color: 'black' }}>Price: ${(item?.id * 23).toLocaleString()}</span>,
-                    <Button className='btn' onClick={() => addToCart(item)}>ADD TO CART</Button>
+                    <button className='glow-on-hover' onClick={() => addToCart(item)}>ADD TO CART</button>
                   ]}
                 >
                   <div onClick={() => history.push(`/game/${item?.id}`)}>

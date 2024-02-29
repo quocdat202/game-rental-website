@@ -2,7 +2,7 @@ import React from 'react';
 import { Carousel, Button, Form, Input, message, Col, Row } from 'antd';
 import { useState, useEffect } from 'react'
 import { Avatar, Space } from 'antd';
-import { ArrowLeftOutlined } from '@ant-design/icons';
+import { ArrowLeftOutlined, ShoppingCartOutlined, RightSquareOutlined } from '@ant-design/icons';
 import '../../Css/DetailCss.css'
 import { useHistory } from 'react-router-dom'
 
@@ -47,17 +47,13 @@ const Detail = ({ match, addToCart }) => {
 
     return (
         <div style={{ padding: '30px 30px', justifyContent: 'center', display: 'flex', }}>
-            <div style={{ color: 'white', paddingRight: '10px' }} onClick={() => history.push('/store')}>
-                <ArrowLeftOutlined />
-            </div>
-
             <Row>
                 <Col span={12} style={{ padding: '0 0' }} >
                     <div className='game-name'>
-                        <h1 style={{ maxWidth: '100%' }}>{data?.title}</h1>
+                        <h1 style={{ width: '1200px', textAlign: 'center' }}>{data?.title}</h1>
                     </div>
 
-                    <div style={{ paddingRight: '35px' }}>
+                    <div style={{ paddingRight: '35px', marginTop: '50px' }}>
                         <Carousel autoplay>
                             {
                                 data?.screenshots?.map((item) => {
@@ -74,33 +70,40 @@ const Detail = ({ match, addToCart }) => {
 
                 <Col span={12} style={{ marginTop: '80px', border: '1px solid #ff4500', borderRadius: '5px' }}>
                     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
-                            <h1 style={{ fontSize: 'largelarge', paddingTop: '12px' }}>Communication:&nbsp;</h1>
-                            <Avatar size={50} src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/2048px-Steam_icon_logo.svg.png' />
-                        </div>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', paddingTop: '20px' }}>
-                            <div className='game-genre'>
-                                <h1 style={{ fontSize: 'large' }}>Game genre: {data?.genre}</h1>
-                            </div>
-                            <div className='game-platform'>
-                                <h1 style={{ fontSize: 'large' }}>Platform: {data?.platform}</h1>
+                        <div style={{ paddingTop: '20px' }}>
+                            <div className='description'>
+                                <div>
+                                    <h1 style={{ fontSize: 'large' }}>Information game</h1>
+                                    {data?.description}
+                                </div>
                             </div>
                         </div>
-                        <div className='description'>
-                            <div style={{ marginTop: '3px' }}>
-                                <h1 style={{ fontSize: 'large' }}>Information game</h1>
-                                {data?.description}
+
+                        <div style={{ paddingTop: '20px' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', flexWrap: 'wrap', backgroundColor: 'black', borderRadius: '5px' }}>
+                                <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
+                                    <h1 style={{ fontSize: 'large', paddingLeft: '15px' }}>Communication:&nbsp;</h1>
+                                    <Avatar size={50} src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/2048px-Steam_icon_logo.svg.png' />
+                                </div>
+                                <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                                    <div className='game-genre'>
+                                        <h1 style={{ fontSize: 'large' }}>Game genre: {data?.genre}</h1>
+                                    </div>
+                                    <div className='game-platform'>
+                                        <h1 style={{ fontSize: 'large' }}>Platform: {data?.platform}</h1>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div style={{ width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '30px 0', flexWrap: 'wrap' }}>
-                        <Button className='btn' style={{ margin: '10px' }} onClick={() => addToCart(data)}>
-                            ADD TO CART
+                        <Button className='btn' style={{ margin: '20px' }} onClick={() => addToCart(data)}>
+                            <ShoppingCartOutlined /> ADD TO CART
                         </Button>
-                        OR
-                        <Button className='btn' style={{ margin: '10px' }} onClick={() => addToCart(data)}>
-                            RENT THIS GAME WITH 0,05$ FOR 1 HOUR
+
+                        <Button className='btn' style={{ margin: '20px' }} onClick={() => addToCart(data)}>
+                            <RightSquareOutlined /> RENT THIS GAME WITH 0,05$ FOR 1 HOUR
                         </Button>
                     </div>
                 </Col>

@@ -82,7 +82,7 @@ const Home = ({ addToCart }) => {
             <div className='games'>
                 <div className='content'>
                     {
-                        data?.length > 0 ? data.slice(offset, offset + limit).slice(0, 3).map((item, index) => {
+                        data?.length > 0 ? data.slice(offset, offset + limit).slice(0, 6).map((item, index) => {
                             return (
                                 <Card
                                     key={index}
@@ -103,7 +103,7 @@ const Home = ({ addToCart }) => {
                                     }
                                     actions={[
                                         <span style={{ fontWeight: '500', color: 'black' }}>Price: ${(item?.id * 23).toLocaleString()}</span>,
-                                        <Button className='btn' onClick={() => addToCart(item)}>ADD TO CART</Button>
+                                        <button className='glow-on-hover' onClick={() => addToCart(item)}>ADD TO CART</button>
                                     ]}
                                 >
                                     <div onClick={() => history.push(`/game/${item?.id}`)}>
@@ -132,7 +132,6 @@ const Home = ({ addToCart }) => {
             </div>
             <div>
                 <div className="footer-container">
-                    <Divider style={{ backgroundColor: '#777' }} />
                     <Row justify="space-around" align="middle">
                         <Col xs={24} sm={12} md={6}>
                             <h3 className="footer-heading">Contact Us</h3>
@@ -155,8 +154,6 @@ const Home = ({ addToCart }) => {
                             <p className="footer-text">Join our gaming community to connect with fellow gamers, share experiences, and participate in events.</p>
                         </Col>
                     </Row>
-                    <Divider className="footer-divider" />
-                    <p className="footer-copyright">© 2023 Gamer Zone. All rights reserved.</p>
                 </div>
             </div>
         </div >

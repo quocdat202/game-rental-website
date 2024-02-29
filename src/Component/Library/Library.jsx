@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Card, Button } from 'antd';
 import { useHistory } from 'react-router-dom'
 import cartEmty from "../../Images/cartEmty.png"
+import { DeleteOutlined } from '@ant-design/icons'
 import '../../Css/LibraryCss.css'
 
 // ... (imports)
@@ -47,7 +48,7 @@ const Library = ({ user }) => {
                 </div> : ''
             }
             {/* ... */}
-            <div style={{paddingLeft: '10%'}}>
+            <div style={{ paddingLeft: '10%' }}>
                 <div className='content'>
                     {dataCart?.length > 0 ? dataCart?.map((item) => (
                         <Card
@@ -75,8 +76,8 @@ const Library = ({ user }) => {
                             </div>
                             <div className="card-actions">
                                 <span style={{ fontWeight: '500', color: 'black' }}>Price: {(item?.id * 23).toLocaleString()}$</span>
-                                <Button type="link" style={{ borderRadius: '5px', border: '2px solid #ff4500', backgroundColor: 'black', color: 'white', height: '50px', width: '100px', fontSize: '16px' }} onClick={() => removeFromCart(item.id)} danger>
-                                    Remove
+                                <Button type="link" className="glow-on-hovers" onClick={() => removeFromCart(item.id)} danger>
+                                    <DeleteOutlined style={{ fontSize: 'larger' }}/>
                                 </Button>
                             </div>
                         </Card>

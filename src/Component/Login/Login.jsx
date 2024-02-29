@@ -100,6 +100,10 @@ const Login = ({ notificationLogin }) => {
                         </Button>
                     </Form.Item>
 
+                    <div style={{ color: 'white', paddingBottom: '10px' }}>
+                        --Or--
+                    </div>
+
                     <Form.Item wrapperCol={{ offset: 0.5 }} style={{ paddingBottom: '20px', margin: '10px' }}>
                         <Button type="primary" onClick={() => history.push("/register")} style={{ backgroundColor: 'White', height: '40px', width: '200px', color: 'black', fontWeight: 'bolder' }}>
                             Sign up
